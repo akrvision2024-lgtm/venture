@@ -2375,68 +2375,94 @@ video {
 }
 .akr-detail-overlay.hidden { display: none !important; }
 .akr-detail-panel {
-  background: #0B1A2E;
-  border: 1px solid rgba(201,116,50,0.25);
+  background: #FAF0DC;
+  border: 1px solid rgba(201,116,50,0.3);
   border-radius: 1.5rem;
   max-width: 560px; width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
 }
 .akr-detail-header { position: relative; height: 200px; overflow: hidden; border-radius: 1.5rem 1.5rem 0 0; }
 .akr-detail-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .akr-detail-header-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(5,13,26,0.92) 0%, rgba(5,13,26,0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(5,13,26,0.88) 0%, rgba(5,13,26,0.15) 60%, transparent 100%);
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 1.25rem;
 }
 .akr-detail-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
 .akr-detail-name { font-size: 1.4rem; font-weight: 700; color: #EEE8DF; margin: 0 0 0.2rem; }
-.akr-detail-location { font-size: 0.78rem; color: rgba(238,232,223,0.65); margin: 0; }
+.akr-detail-location { font-size: 0.78rem; color: rgba(238,232,223,0.75); margin: 0; }
 .akr-detail-close {
   position: absolute; top: 0.9rem; right: 0.9rem;
-  background: rgba(5,13,26,0.7); color: #EEE8DF;
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(5,13,26,0.65); color: #EEE8DF;
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 50%; width: 32px; height: 32px;
   font-size: 1rem; cursor: pointer; line-height: 1;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s;
 }
-.akr-detail-close:hover { background: rgba(201,116,50,0.8); }
+.akr-detail-close:hover { background: rgba(201,116,50,0.9); }
 .akr-detail-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
 .akr-detail-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
 }
 .akr-detail-stat {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(201,116,50,0.07); border: 1px solid rgba(201,116,50,0.2);
   border-radius: 0.75rem; padding: 0.85rem 0.5rem;
   display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
 }
 .akr-detail-stat-val { font-size: 1.1rem; font-weight: 700; color: #C97432; }
-.akr-detail-stat-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(238,232,223,0.5); text-align: center; }
+.akr-detail-stat-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: #6B7A8D; text-align: center; }
 .akr-detail-section-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C97432; margin: 0 0 0.75rem; }
 .akr-detail-configs { display: flex; flex-direction: column; gap: 0.5rem; }
 .akr-detail-config {
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(201,116,50,0.05); border: 1px solid rgba(201,116,50,0.18);
   border-radius: 0.65rem; padding: 0.7rem 1rem;
 }
-.akr-detail-config-type { font-size: 0.9rem; font-weight: 700; color: #EEE8DF; }
-.akr-detail-config-area { font-size: 0.8rem; color: rgba(238,232,223,0.55); }
+.akr-detail-config-type { font-size: 0.9rem; font-weight: 700; color: #0B1A2E; }
+.akr-detail-config-area { font-size: 0.8rem; color: #445566; }
+.akr-detail-config-select {
+  font-size: 0.8rem; font-weight: 600; color: #0B1A2E;
+  background: #FAF0DC; border: 1px solid rgba(201,116,50,0.45);
+  border-radius: 6px; padding: 0.2rem 0.5rem; cursor: pointer;
+  outline: none; appearance: auto;
+}
+.akr-detail-config-select option { background: #FAF0DC; color: #0B1A2E; }
+.akr-unlock-price-btn {
+  display: inline-block; font-size: 0.78rem; font-weight: 700;
+  color: #fff; background: #C97432;
+  border: none; border-radius: 6px; padding: 0.25rem 0.65rem;
+  cursor: pointer; text-decoration: none; transition: background 0.2s;
+  white-space: nowrap;
+}
+.akr-unlock-price-btn:hover { background: #a85e24; }
+
+/* Coming-soon toast */
+#akr-toast {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: #0B1A2E; color: #EEE8DF; font-size: 0.85rem; font-weight: 500;
+  padding: 0.75rem 1.25rem; border-radius: 999px; border: 1px solid rgba(201,116,50,0.4);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 9999;
+  opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none;
+}
+#akr-toast.akr-toast-show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .akr-detail-config-price { font-size: 0.85rem; font-weight: 600; color: #C97432; }
 .akr-detail-highlights { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.akr-detail-highlights li { font-size: 0.85rem; color: rgba(238,232,223,0.75); padding-left: 1.1rem; position: relative; }
+.akr-detail-highlights li { font-size: 0.85rem; color: #445566; padding-left: 1.1rem; position: relative; }
 .akr-detail-highlights li::before { content: '✔'; position: absolute; left: 0; color: #C97432; font-size: 0.7rem; top: 2px; }
 .akr-detail-amenities { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .akr-detail-amenities span {
-  background: rgba(201,116,50,0.1); border: 1px solid rgba(201,116,50,0.2);
-  border-radius: 999px; font-size: 0.75rem; color: rgba(238,232,223,0.8);
+  background: rgba(201,116,50,0.1); border: 1px solid rgba(201,116,50,0.25);
+  border-radius: 999px; font-size: 0.75rem; color: #5C3D1E;
   padding: 0.3rem 0.75rem;
 }
-.akr-detail-approvals { display: flex; flex-direction: column; gap: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 0.65rem; padding: 0.85rem 1rem; }
+.akr-detail-approvals { display: flex; flex-direction: column; gap: 0.5rem; background: rgba(201,116,50,0.06); border: 1px solid rgba(201,116,50,0.2); border-radius: 0.65rem; padding: 0.85rem 1rem; }
 .akr-detail-approval-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.akr-detail-approvals .akr-popup-number-value { color: #445566; }
 .akr-detail-cta {
   display: block; text-align: center;
   background: #25D366; color: #fff;
