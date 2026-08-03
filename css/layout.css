@@ -2504,42 +2504,65 @@ video {
 
 /* ── Brochure Download Modal ── */
 .akr-brochure-card {
-  background: #FAF0DC; border: 1px solid rgba(201,116,50,0.3);
-  border-radius: 1.25rem; max-width: 480px; width: 100%;
-  max-height: 90vh; overflow-y: auto;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
-  padding: 2rem 1.75rem 1.5rem; position: relative;
+  border-radius: 1.25rem; max-width: 460px; width: 100%;
+  max-height: 92vh; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  display: flex; flex-direction: column;
 }
-.akr-bm-header { text-align: center; margin-bottom: 1.5rem; }
-.akr-bm-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-.akr-bm-title { font-size: 1.25rem; font-weight: 800; color: #0B1A2E; margin: 0 0 0.4rem; }
-.akr-bm-sub { font-size: 0.85rem; color: #445566; margin: 0; }
-.akr-form-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
-.akr-form-label { font-size: 0.8rem; font-weight: 700; color: #0B1A2E; }
+.akr-bm-banner {
+  background: linear-gradient(135deg, #0B1A2E 0%, #152d4a 100%);
+  padding: 1.4rem 1.5rem 1.2rem;
+  border-bottom: 2px solid rgba(201,116,50,0.4);
+  position: relative; flex-shrink: 0;
+}
+.akr-bm-close {
+  position: absolute; top: 0.85rem; right: 0.85rem;
+  background: rgba(255,255,255,0.1); color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%; width: 30px; height: 30px;
+  font-size: 0.85rem; cursor: pointer; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.akr-bm-close:hover { background: rgba(201,116,50,0.85); }
+.akr-bm-tag {
+  display: inline-block; font-size: 0.63rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: #C97432; background: rgba(201,116,50,0.12);
+  border: 1px solid rgba(201,116,50,0.3);
+  border-radius: 999px; padding: 0.2rem 0.65rem; margin-bottom: 0.6rem;
+}
+.akr-bm-title { font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0 0 0.3rem; }
+.akr-bm-sub { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.5; }
+.akr-bm-form-area { padding: 1.2rem 1.4rem 1.4rem; overflow-y: auto; flex: 1; background: #FAF0DC; }
+.akr-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+@media (max-width: 420px) { .akr-form-row { grid-template-columns: 1fr; } }
+.akr-form-group { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.85rem; }
+.akr-form-label { font-size: 0.78rem; font-weight: 700; color: #0B1A2E; }
 .akr-required { color: #C97432; }
-.akr-optional { font-weight: 400; color: #6B7A8D; font-size: 0.75rem; }
+.akr-optional { font-weight: 400; color: #6B7A8D; font-size: 0.72rem; }
 .akr-form-input {
   width: 100%; padding: 0.6rem 0.85rem;
-  background: #fff; border: 1.5px solid rgba(201,116,50,0.35);
+  background: #fff; border: 1.5px solid rgba(201,116,50,0.3);
   border-radius: 8px; font-size: 0.875rem; color: #0B1A2E;
   outline: none; transition: border-color 0.2s, box-shadow 0.2s;
   font-family: inherit; box-sizing: border-box;
 }
-.akr-form-input:focus { border-color: #C97432; box-shadow: 0 0 0 3px rgba(201,116,50,0.15); }
+.akr-form-input:focus { border-color: #C97432; box-shadow: 0 0 0 3px rgba(201,116,50,0.12); }
 .akr-form-input.akr-input-error { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
-.akr-form-textarea { resize: vertical; min-height: 80px; }
-.akr-field-error { font-size: 0.75rem; color: #dc2626; min-height: 1rem; }
+.akr-form-textarea { resize: vertical; min-height: 78px; }
+.akr-field-error { font-size: 0.72rem; color: #dc2626; min-height: 1rem; }
 .akr-brochure-submit-btn {
-  display: block; width: 100%; padding: 0.8rem;
-  background: #C97432; color: #fff;
-  border: none; border-radius: 999px;
-  font-size: 0.95rem; font-weight: 700; cursor: pointer;
-  transition: background 0.2s, transform 0.15s; margin-top: 0.5rem;
-  font-family: inherit;
+  display: block; width: 100%; padding: 0.85rem;
+  background: linear-gradient(135deg, #E8975A 0%, #C97432 100%);
+  color: #fff; border: none; border-radius: 999px;
+  font-size: 1rem; font-weight: 800; cursor: pointer; letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.15s; margin-top: 0.25rem;
+  font-family: inherit; box-shadow: 0 4px 14px rgba(201,116,50,0.4);
 }
-.akr-brochure-submit-btn:hover:not(:disabled) { background: #a85e24; transform: translateY(-1px); }
-.akr-brochure-submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
-.akr-form-privacy { font-size: 0.72rem; color: #6B7A8D; text-align: center; margin: 0.75rem 0 0; }
+.akr-brochure-submit-btn:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
+.akr-brochure-submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+.akr-form-privacy { font-size: 0.7rem; color: #6B7A8D; text-align: center; margin: 0.65rem 0 0; }
 
 /* TEMPORARY — hide phone & WhatsApp until number is ready. Remove these 4 lines to re-enable. */
 a[href^="tel:"],
