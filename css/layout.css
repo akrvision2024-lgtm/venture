@@ -2419,10 +2419,19 @@ video {
 .akr-detail-section-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C97432; margin: 0 0 0.75rem; }
 .akr-detail-configs { display: flex; flex-direction: column; gap: 0.5rem; }
 .akr-detail-config {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
   background: rgba(201,116,50,0.05); border: 1px solid rgba(201,116,50,0.18);
   border-radius: 0.65rem; padding: 0.7rem 1rem;
 }
+.akr-detail-config-actions { display: flex; gap: 0.4rem; align-items: center; flex-shrink: 0; }
+.akr-download-brochure-btn {
+  display: inline-block; font-size: 0.78rem; font-weight: 700;
+  color: #fff; background: #C97432;
+  border: none; border-radius: 6px; padding: 0.25rem 0.65rem;
+  cursor: pointer; text-decoration: none; transition: background 0.2s;
+  white-space: nowrap;
+}
+.akr-download-brochure-btn:hover { background: #a85e24; }
 .akr-detail-config-type { font-size: 0.9rem; font-weight: 700; color: #0B1A2E; }
 .akr-detail-config-area { font-size: 0.8rem; color: #445566; }
 .akr-detail-config-select {
@@ -2471,6 +2480,66 @@ video {
   transition: background 0.2s, transform 0.15s;
 }
 .akr-detail-cta:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+.akr-brochure-card-btn {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+  color: #fff; background: linear-gradient(135deg, #E8975A 0%, #C97432 50%, #9B4E10 100%);
+  border: none; border-radius: 999px; padding: 0.4rem 0.9rem;
+  cursor: pointer; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 12px rgba(201,116,50,0.55), 0 0 0 2px rgba(201,116,50,0.2);
+  white-space: nowrap; flex-shrink: 0;
+  animation: akr-brochure-pulse 2.5s ease-in-out infinite;
+}
+.akr-brochure-card-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(201,116,50,0.65), 0 0 0 3px rgba(201,116,50,0.25);
+  animation: none;
+}
+@keyframes akr-brochure-pulse {
+  0%, 100% { box-shadow: 0 3px 12px rgba(201,116,50,0.55), 0 0 0 2px rgba(201,116,50,0.2); }
+  50%       { box-shadow: 0 3px 18px rgba(201,116,50,0.8), 0 0 0 4px rgba(201,116,50,0.15); }
+}
+
+/* ── Brochure Download Modal ── */
+.akr-brochure-card {
+  background: #FAF0DC; border: 1px solid rgba(201,116,50,0.3);
+  border-radius: 1.25rem; max-width: 480px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  padding: 2rem 1.75rem 1.5rem; position: relative;
+}
+.akr-bm-header { text-align: center; margin-bottom: 1.5rem; }
+.akr-bm-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.akr-bm-title { font-size: 1.25rem; font-weight: 800; color: #0B1A2E; margin: 0 0 0.4rem; }
+.akr-bm-sub { font-size: 0.85rem; color: #445566; margin: 0; }
+.akr-form-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
+.akr-form-label { font-size: 0.8rem; font-weight: 700; color: #0B1A2E; }
+.akr-required { color: #C97432; }
+.akr-optional { font-weight: 400; color: #6B7A8D; font-size: 0.75rem; }
+.akr-form-input {
+  width: 100%; padding: 0.6rem 0.85rem;
+  background: #fff; border: 1.5px solid rgba(201,116,50,0.35);
+  border-radius: 8px; font-size: 0.875rem; color: #0B1A2E;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit; box-sizing: border-box;
+}
+.akr-form-input:focus { border-color: #C97432; box-shadow: 0 0 0 3px rgba(201,116,50,0.15); }
+.akr-form-input.akr-input-error { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
+.akr-form-textarea { resize: vertical; min-height: 80px; }
+.akr-field-error { font-size: 0.75rem; color: #dc2626; min-height: 1rem; }
+.akr-brochure-submit-btn {
+  display: block; width: 100%; padding: 0.8rem;
+  background: #C97432; color: #fff;
+  border: none; border-radius: 999px;
+  font-size: 0.95rem; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, transform 0.15s; margin-top: 0.5rem;
+  font-family: inherit;
+}
+.akr-brochure-submit-btn:hover:not(:disabled) { background: #a85e24; transform: translateY(-1px); }
+.akr-brochure-submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.akr-form-privacy { font-size: 0.72rem; color: #6B7A8D; text-align: center; margin: 0.75rem 0 0; }
 
 /* TEMPORARY — hide phone & WhatsApp until number is ready. Remove these 4 lines to re-enable. */
 a[href^="tel:"],
