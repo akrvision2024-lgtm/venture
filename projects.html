@@ -77,7 +77,7 @@
          <option>1,150 sq.ft</option>
          <option>1,265 sq.ft</option>
         </select>
-        <span class="akr-detail-config-price"><a href="#" onclick="akrUnlockPrice(event)" class="akr-unlock-price-btn">🔓 Unlock Price</a></span>
+        <div class="akr-detail-config-actions"><a href="#" onclick="akrUnlockPrice(event)" class="akr-unlock-price-btn">🔓 Unlock Price</a></div>
        </div>
        <div class="akr-detail-config">
         <span class="akr-detail-config-type">3 BHK</span>
@@ -92,7 +92,7 @@
          <option>1,980 sq.ft</option>
          <option>2,010 sq.ft</option>
         </select>
-        <span class="akr-detail-config-price"><a href="#" onclick="akrUnlockPrice(event)" class="akr-unlock-price-btn">🔓 Unlock Price</a></span>
+        <div class="akr-detail-config-actions"><a href="#" onclick="akrUnlockPrice(event)" class="akr-unlock-price-btn">🔓 Unlock Price</a></div>
        </div>
       </div>
      </div>
@@ -137,6 +137,42 @@
      <!-- CTA -->
      <a href="https://wa.me/910000000000?text=Hi%2C%20I%27m%20interested%20in%20K%20P%20Estates" target="_blank" rel="noopener noreferrer" class="akr-detail-cta">Enquire on WhatsApp</a>
     </div>
+   </div>
+  </div>
+
+  <!-- Brochure Download Modal -->
+  <div id="akr-brochure-modal" role="dialog" aria-modal="true" aria-labelledby="akr-bm-title" class="akr-detail-overlay hidden">
+   <div class="akr-brochure-card">
+    <button class="akr-detail-close" id="akr-brochure-close" aria-label="Close">✕</button>
+    <div class="akr-bm-header">
+     <div class="akr-bm-icon">📄</div>
+     <h2 id="akr-bm-title" class="akr-bm-title">Download Brochure</h2>
+     <p class="akr-bm-sub">Share your details and get the K P Estates brochure instantly.</p>
+    </div>
+    <form id="akr-brochure-form" novalidate autocomplete="on">
+     <div class="akr-form-group">
+      <label class="akr-form-label" for="akr-bf-name">Full Name <span class="akr-required">*</span></label>
+      <input class="akr-form-input" type="text" id="akr-bf-name" name="name" placeholder="e.g. Rajesh Kumar" autocomplete="name" />
+      <span class="akr-field-error" id="akr-err-name"></span>
+     </div>
+     <div class="akr-form-group">
+      <label class="akr-form-label" for="akr-bf-phone">Phone Number <span class="akr-required">*</span></label>
+      <input class="akr-form-input" type="tel" id="akr-bf-phone" name="phone" placeholder="10-digit mobile number" autocomplete="tel" maxlength="10" inputmode="numeric" />
+      <span class="akr-field-error" id="akr-err-phone"></span>
+     </div>
+     <div class="akr-form-group">
+      <label class="akr-form-label" for="akr-bf-email">Email Address <span class="akr-optional">(optional)</span></label>
+      <input class="akr-form-input" type="email" id="akr-bf-email" name="email" placeholder="you@example.com" autocomplete="email" />
+      <span class="akr-field-error" id="akr-err-email"></span>
+     </div>
+     <div class="akr-form-group">
+      <label class="akr-form-label" for="akr-bf-message">Message <span class="akr-required">*</span></label>
+      <textarea class="akr-form-input akr-form-textarea" id="akr-bf-message" name="message" rows="3" placeholder="Tell us about your requirement..."></textarea>
+      <span class="akr-field-error" id="akr-err-message"></span>
+     </div>
+     <button type="submit" class="akr-brochure-submit-btn" id="akr-brochure-submit">📥 Download Brochure</button>
+     <p class="akr-form-privacy">🔒 Your information is safe with us. We never spam.</p>
+    </form>
    </div>
   </div>
 
@@ -311,9 +347,12 @@
            </div>
           </div>
           <div class="flex flex-1 flex-col gap-4 p-6">
-           <span class="inline-flex w-fit items-center rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
-            Residential
-           </span>
+           <div class="flex items-center justify-between gap-2">
+            <span class="inline-flex w-fit items-center rounded-full bg-accent/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
+             Residential
+            </span>
+            <a href="#" onclick="akrDownloadBrochure(event)" class="akr-brochure-card-btn">📄 Brochure</a>
+           </div>
            <div>
             <h3 class="text-lg font-bold leading-snug text-foreground group-hover:text-accent transition-colors duration-200">
              K P Estates
