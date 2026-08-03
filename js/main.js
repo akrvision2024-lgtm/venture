@@ -241,13 +241,37 @@ document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       source   : 'Brochure Download'
     };
 
-    /* Save to Google Sheets — form-encoded so no preflight is needed on any browser */
+    /* Save to Google Sheets — hidden iframe form POST: no CORS, works on every browser/mobile */
     if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
-      fetch(SHEET_URL, {
-        method : 'POST',
-        mode   : 'no-cors',
-        body   : new URLSearchParams(payload) /* application/x-www-form-urlencoded — always allowed */
-      }).catch(function(){}); /* silent fail — download still proceeds */
+      try {
+        var frameName = 'akr_gs_' + Date.now();
+        var iframe = document.createElement('iframe');
+        iframe.name = frameName;
+        iframe.style.cssText = 'display:none;position:absolute;width:0;height:0;border:0;';
+        document.body.appendChild(iframe);
+
+        var form = document.createElement('form');
+        form.action  = SHEET_URL;
+        form.method  = 'POST';
+        form.target  = frameName;
+        form.style.display = 'none';
+
+        Object.keys(payload).forEach(function(k) {
+          var inp = document.createElement('input');
+          inp.type  = 'hidden';
+          inp.name  = k;
+          inp.value = payload[k];
+          form.appendChild(inp);
+        });
+
+        document.body.appendChild(form);
+        form.submit();
+
+        setTimeout(function() {
+          if (form.parentNode)   form.remove();
+          if (iframe.parentNode) iframe.remove();
+        }, 5000);
+      } catch(ex) { /* silent fail — download still proceeds */ }
     }
 
     triggerDownload();
