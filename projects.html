@@ -143,36 +143,40 @@
   <!-- Brochure Download Modal -->
   <div id="akr-brochure-modal" role="dialog" aria-modal="true" aria-labelledby="akr-bm-title" class="akr-detail-overlay hidden">
    <div class="akr-brochure-card">
-    <button class="akr-detail-close" id="akr-brochure-close" aria-label="Close">✕</button>
-    <div class="akr-bm-header">
-     <div class="akr-bm-icon">📄</div>
-     <h2 id="akr-bm-title" class="akr-bm-title">Download Brochure</h2>
-     <p class="akr-bm-sub">Share your details and get the K P Estates brochure instantly.</p>
+    <div class="akr-bm-banner">
+     <button id="akr-brochure-close" class="akr-bm-close" aria-label="Close">✕</button>
+     <span class="akr-bm-tag">K P Estates · Hyderabad</span>
+     <h2 id="akr-bm-title" class="akr-bm-title">📄 Download Brochure</h2>
+     <p class="akr-bm-sub">Fill in your details to receive the brochure instantly. Your information stays private.</p>
     </div>
-    <form id="akr-brochure-form" novalidate autocomplete="on">
-     <div class="akr-form-group">
-      <label class="akr-form-label" for="akr-bf-name">Full Name <span class="akr-required">*</span></label>
-      <input class="akr-form-input" type="text" id="akr-bf-name" name="name" placeholder="e.g. Rajesh Kumar" autocomplete="name" />
-      <span class="akr-field-error" id="akr-err-name"></span>
-     </div>
-     <div class="akr-form-group">
-      <label class="akr-form-label" for="akr-bf-phone">Phone Number <span class="akr-required">*</span></label>
-      <input class="akr-form-input" type="tel" id="akr-bf-phone" name="phone" placeholder="10-digit mobile number" autocomplete="tel" maxlength="10" inputmode="numeric" />
-      <span class="akr-field-error" id="akr-err-phone"></span>
-     </div>
-     <div class="akr-form-group">
-      <label class="akr-form-label" for="akr-bf-email">Email Address <span class="akr-optional">(optional)</span></label>
-      <input class="akr-form-input" type="email" id="akr-bf-email" name="email" placeholder="you@example.com" autocomplete="email" />
-      <span class="akr-field-error" id="akr-err-email"></span>
-     </div>
-     <div class="akr-form-group">
-      <label class="akr-form-label" for="akr-bf-message">Message <span class="akr-required">*</span></label>
-      <textarea class="akr-form-input akr-form-textarea" id="akr-bf-message" name="message" rows="3" placeholder="Tell us about your requirement..."></textarea>
-      <span class="akr-field-error" id="akr-err-message"></span>
-     </div>
-     <button type="submit" class="akr-brochure-submit-btn" id="akr-brochure-submit">📥 Download Brochure</button>
-     <p class="akr-form-privacy">🔒 Your information is safe with us. We never spam.</p>
-    </form>
+    <div class="akr-bm-form-area">
+     <form id="akr-brochure-form" novalidate autocomplete="on">
+      <div class="akr-form-row">
+       <div class="akr-form-group">
+        <label class="akr-form-label" for="akr-bf-name">Full Name <span class="akr-required">*</span></label>
+        <input class="akr-form-input" type="text" id="akr-bf-name" name="name" placeholder="e.g. Rajesh Kumar" autocomplete="name" />
+        <span class="akr-field-error" id="akr-err-name"></span>
+       </div>
+       <div class="akr-form-group">
+        <label class="akr-form-label" for="akr-bf-phone">Phone <span class="akr-required">*</span></label>
+        <input class="akr-form-input" type="tel" id="akr-bf-phone" name="phone" placeholder="10-digit number" autocomplete="tel" maxlength="10" inputmode="numeric" />
+        <span class="akr-field-error" id="akr-err-phone"></span>
+       </div>
+      </div>
+      <div class="akr-form-group">
+       <label class="akr-form-label" for="akr-bf-email">Email <span class="akr-optional">(optional)</span></label>
+       <input class="akr-form-input" type="email" id="akr-bf-email" name="email" placeholder="you@example.com" autocomplete="email" />
+       <span class="akr-field-error" id="akr-err-email"></span>
+      </div>
+      <div class="akr-form-group">
+       <label class="akr-form-label" for="akr-bf-message">Message <span class="akr-required">*</span></label>
+       <textarea class="akr-form-input akr-form-textarea" id="akr-bf-message" name="message" rows="3" placeholder="Tell us about your requirement..."></textarea>
+       <span class="akr-field-error" id="akr-err-message"></span>
+      </div>
+      <button type="submit" class="akr-brochure-submit-btn" id="akr-brochure-submit">📥 Download Brochure</button>
+      <p class="akr-form-privacy">🔒 Your information is safe with us. We never spam.</p>
+     </form>
+    </div>
    </div>
   </div>
 
