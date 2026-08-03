@@ -241,14 +241,13 @@ document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       source   : 'Brochure Download'
     };
 
-    /* Save to Google Sheets — fire-and-forget (download proceeds regardless) */
+    /* Save to Google Sheets — form-encoded so no preflight is needed on any browser */
     if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
       fetch(SHEET_URL, {
-        method  : 'POST',
-        mode    : 'no-cors',
-        headers : { 'Content-Type': 'application/json' },
-        body    : JSON.stringify(payload)
-      }).catch(function(){}); /* silent fail */
+        method : 'POST',
+        mode   : 'no-cors',
+        body   : new URLSearchParams(payload) /* application/x-www-form-urlencoded — always allowed */
+      }).catch(function(){}); /* silent fail — download still proceeds */
     }
 
     triggerDownload();
