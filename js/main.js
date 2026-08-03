@@ -241,13 +241,24 @@ document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       source   : 'Brochure Download'
     };
 
-    /* Save to Google Sheets — script-tag GET: zero CORS, works on every browser/mobile */
+    /* Save to Google Sheets
+     * Uses fetch GET + keepalive:true so the request survives page navigation.
+     * On iOS Safari, clicking the download link navigates the page which cancels
+     * ordinary requests — keepalive prevents that. Falls back to script-tag for
+     * very old browsers that lack fetch. Both are GET so doGet(e) handles both.
+     */
     if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
-      var script = document.createElement('script');
-      script.src = SHEET_URL + '?' + new URLSearchParams(payload).toString();
-      script.onerror = function() { if (this.parentNode) this.remove(); };
-      document.head.appendChild(script);
-      setTimeout(function() { if (script.parentNode) script.remove(); }, 8000);
+      var sheetUrl = SHEET_URL + '?' + new URLSearchParams(payload).toString();
+      try {
+        fetch(sheetUrl, { method: 'GET', mode: 'no-cors', keepalive: true }).catch(function(){});
+      } catch (fetchErr) {
+        /* Fallback for browsers without fetch */
+        var s = document.createElement('script');
+        s.src = sheetUrl;
+        s.onerror = function(){ if (s.parentNode) s.remove(); };
+        document.head.appendChild(s);
+        setTimeout(function(){ if (s.parentNode) s.remove(); }, 8000);
+      }
     }
 
     triggerDownload();
