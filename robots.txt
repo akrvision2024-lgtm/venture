@@ -12,4 +12,4 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
-Sitemap: https://visionakr.in/sitemap.xml
+Sitemap: https://www.visionakr.in/sitemap.xml
