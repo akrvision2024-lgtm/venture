@@ -151,7 +151,7 @@ document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
    * BROCHURE: Place your PDF at brochure/kp-estates-brochure.pdf
    */
   var SHEET_URL    = 'https://script.google.com/macros/s/AKfycbxd2lTNJIJo29BqB7JXcNMMQSSdfsfan5cyDQJ8TsyIRgxYGAlpFrETBt92b5dhXFR20w/exec';
-  var BROCHURE_URL = 'brochure/VISION_AKR_K_P_Estates_brochure.pdf';
+  var BROCHURE_URL = '/brochure/VISION_AKR_K_P_Estates_brochure.pdf';
 
   function openModal() {
     var m = document.getElementById('akr-brochure-modal');
