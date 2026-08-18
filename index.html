@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Vision AKR — Where Premium Living Begins | Real Estate Hyderabad</title>
   <meta name="title" content="Vision AKR — Where Premium Living Begins | Real Estate Hyderabad" />
@@ -43,7 +43,8 @@
   <link rel="apple-touch-icon" href="images/LOGO_2.jpg" />
   <link rel="preload" href="images/LOGO_2.jpg" as="image" />
   <link href="./css/layout.css" rel="stylesheet" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.visionakr.in/#organization","name":"Vision AKR","url":"https://www.visionakr.in","logo":"https://www.visionakr.in/images/LOGO_2.jpg","email":"visionakr@gmail.com","telephone":"+910000000000","address":{"@type":"PostalAddress","streetAddress":"Chengicherla, Medipally","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500039","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+910000000000","contactType":"customer service","areaServed":"IN","availableLanguage":["English","Telugu","Hindi"]}},{"@type":"RealEstateAgent","@id":"https://www.visionakr.in/#business","name":"Vision AKR","url":"https://www.visionakr.in","telephone":"+910000000000","email":"visionakr@gmail.com","foundingDate":"2024","address":{"@type":"PostalAddress","streetAddress":"Chengicherla, Medipally","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500039","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":17.4065,"longitude":78.4772},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}},{"@type":"WebSite","@id":"https://www.visionakr.in/#website","url":"https://www.visionakr.in","name":"Vision AKR","publisher":{"@id":"https://www.visionakr.in/#organization"}},{"@type":"WebPage","@id":"https://www.visionakr.in/#webpage","url":"https://www.visionakr.in/","name":"Vision AKR — Where Premium Living Begins | Real Estate Hyderabad","isPartOf":{"@id":"https://www.visionakr.in/#website"},"about":{"@id":"https://www.visionakr.in/#organization"}}]}</script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.visionakr.in/#organization","name":"Vision AKR","url":"https://www.visionakr.in","logo":"https://www.visionakr.in/images/LOGO_2.jpg","email":"visionakr@gmail.com","telephone":"+910000000000","address":{"@type":"PostalAddress","streetAddress":"Chengicherla, Medipally","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500039","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+910000000000","contactType":"customer service","areaServed":"IN","availableLanguage":["English","Telugu","Hindi"]}},{"@type":"RealEstateAgent","@id":"https://www.visionakr.in/#business","name":"Vision AKR","url":"https://www.visionakr.in","telephone":"+910000000000","email":"visionakr@gmail.com","foundingDate":"2024","address":{"@type":"PostalAddress","streetAddress":"Chengicherla, Medipally","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500039","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":17.4307472,"longitude":78.6014693},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}},{"@type":"WebSite","@id":"https://www.visionakr.in/#website","url":"https://www.visionakr.in","name":"Vision AKR","publisher":{"@id":"https://www.visionakr.in/#organization"}},{"@type":"WebPage","@id":"https://www.visionakr.in/#webpage","url":"https://www.visionakr.in/","name":"Vision AKR — Where Premium Living Begins | Real Estate Hyderabad","isPartOf":{"@id":"https://www.visionakr.in/#website"},"about":{"@id":"https://www.visionakr.in/#organization"}}]}</script>
   <script src="js/theme-init.js"></script>
 </head>
  <body class="__className_f367f3 antialiased">
@@ -105,6 +106,7 @@
       <ul class="akr-detail-highlights">
        <li>🚉 Charlapalli Railway Station &lt; 2.5 KM</li>
        <li>🛣️ Warangal Highway &lt; 2.5 KM</li>
+       <li>🏫 Celeste International School — nearby</li>
        <li>Gated community with 24/7 security</li>
        <li>Premium 2 &amp; 3 BHK homes</li>
        <li>Vastu-compliant floor plans</li>
@@ -136,6 +138,12 @@
        <div class="akr-detail-approval-row"><span class="akr-popup-number-label">TS RERA No.</span><span class="akr-popup-number-value">P02400010958</span></div>
        <div class="akr-detail-approval-row"><span class="akr-popup-number-label">HMDA LP No.</span><span class="akr-popup-number-value">010579/BP/HMDA/2766/GHT/2024</span></div>
       </div>
+     </div>
+     <!-- Location Map -->
+     <div class="akr-detail-section">
+      <h3 class="akr-detail-section-title">Location</h3>
+      <div id="kp-map" style="height:260px;border-radius:10px;overflow:hidden;background:#e8e0d5;"></div>
+      <a href="https://maps.app.goo.gl/qovPGwB16RsoFU2UA" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;font-size:0.8rem;color:#C97432;">📍 Open in Google Maps ↗</a>
      </div>
      <!-- CTA -->
      <a href="https://wa.me/910000000000?text=Hi%2C%20I%27m%20interested%20in%20K%20P%20Estates" target="_blank" rel="noopener noreferrer" class="akr-detail-cta">Enquire on WhatsApp</a>
@@ -858,7 +866,38 @@
    </div>
   </footer>
    <script src="js/main.js"></script>
- <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="akr-whatsapp-float">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+  (function(){
+   var kpMapInited=false;
+   function pin(emoji){
+    return L.divIcon({html:'<span style="font-size:22px;line-height:1;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))">'+emoji+'<\/span>',className:'',iconSize:[26,26],iconAnchor:[13,24],popupAnchor:[0,-24]});
+   }
+   function initKPMap(){
+    if(kpMapInited||!window.L)return;
+    var el=document.getElementById('kp-map');
+    if(!el)return;
+    kpMapInited=true;
+    var map=L.map('kp-map',{scrollWheelZoom:false}).setView([17.4307,78.6015],14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'\u00a9 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap<\/a>'}).addTo(map);
+    var pts=[
+     [[17.4307,78.6015],'📍','<b>K P Estates<\/b><br>Vision AKR Ventures','📍 K P Estates','top'],
+     [[17.4585975,78.6066056],'🚉','Charlapalli Railway Station<br>&lt; 2.5 KM','🚉 Charlapalli Stn.','right'],
+     [[17.411524,78.607031],'🛣️','Warangal Highway (NH163)<br>&lt; 2.5 KM','🛣️ Warangal Hwy','right'],
+     [[17.4276625,78.6030238],'🏫','Celeste International School','🏫 Celeste Intl. School','bottom']
+    ];
+    var lls=[];
+    var ls=document.createElement('style');
+    ls.textContent='.kp-map-label{background:rgba(5,13,26,.88)!important;color:#faf0dc!important;border:none!important;border-radius:4px!important;font-size:11px!important;font-weight:700!important;padding:2px 7px!important;white-space:nowrap!important;box-shadow:0 2px 6px rgba(0,0,0,.4)!important;}.kp-map-label.leaflet-tooltip::before{display:none!important;}';
+    document.head.appendChild(ls);
+    pts.forEach(function(p){L.marker(p[0],{icon:pin(p[1])}).addTo(map).bindPopup(p[2]).bindTooltip(p[3],{permanent:true,direction:p[4],className:'kp-map-label'});lls.push(p[0]);});
+    map.fitBounds(lls,{padding:[28,28]});
+    setTimeout(function(){map.invalidateSize();},150);
+   }
+   var btn=document.querySelector('[onclick*="kp-detail-panel"]');
+   if(btn)btn.addEventListener('click',function(){setTimeout(initKPMap,120);});
+  })();
+  </script>
   <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
  </a>
  </body>
